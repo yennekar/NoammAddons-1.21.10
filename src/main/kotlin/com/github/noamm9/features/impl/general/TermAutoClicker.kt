@@ -11,7 +11,7 @@ import com.github.noamm9.ui.clickgui.components.provideDelegate
 import com.github.noamm9.ui.clickgui.components.withDescription
 import com.github.noamm9.utils.items.ItemUtils.skyblockId
 
-object TermAutoClicker: Feature(name = "Term AC", description = "Automatically uses Salvation ability when holding right click.") {
+object TermAutoClicker: Feature(name = "Terminator Autoclicker", description = "Automatically uses Salvation ability when holding right click.") {
     private val cps by SliderSetting("Clicks Per Second", 5, 1, 15, 1).withDescription("How many times per second the autoclicker should click.")
     private var nextLeftClick = 0L
 

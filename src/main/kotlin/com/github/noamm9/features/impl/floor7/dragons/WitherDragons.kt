@@ -9,6 +9,7 @@ import com.github.noamm9.ui.clickgui.components.impl.ToggleSetting
 import com.github.noamm9.ui.clickgui.components.provideDelegate
 import com.github.noamm9.ui.clickgui.components.section
 import com.github.noamm9.ui.clickgui.components.showIf
+import com.github.noamm9.ui.clickgui.components.withDescription
 import com.github.noamm9.utils.ColorUtils.withAlpha
 import com.github.noamm9.utils.MathUtils.add
 import com.github.noamm9.utils.NumbersUtils.toFixed
@@ -47,8 +48,8 @@ object WitherDragons: Feature(
     val dragonPriorityToggle by ToggleSetting("Dragon Priority", false).section("Dragon Priority")
     val normalPower by SliderSetting("Normal Power", 0f, 0f, 32f, 0.5f).showIf { dragonPriorityToggle.value }
     val easyPower by SliderSetting("Easy Power", 0f, 0f, 32f, 0.5f).showIf { dragonPriorityToggle.value }
-    val soloDebuff by DropdownSetting("Purple Solo Debuff", 0, listOf("Tank", "Healer")).showIf { dragonPriorityToggle.value }
-    val soloDebuffOnAll by ToggleSetting("Solo Debuff on All Splits", true).showIf { dragonPriorityToggle.value }
+    val soloDebuff by DropdownSetting("Purple Solo Debuff", 0, listOf("Tank", "Healer")).withDescription("Sets who's on archer prio").showIf { dragonPriorityToggle.value }
+    val soloDebuffOnAll by ToggleSetting("Solo Debuff on All Splits", true).withDescription("Enabling only has Purple Solo Debuff class on archer prio, otherwise both").showIf { dragonPriorityToggle.value }
 
     var priorityDragon = WitherDragonEnum.None
 
